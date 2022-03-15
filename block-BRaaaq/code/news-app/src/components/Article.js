@@ -1,4 +1,4 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 function Article(props) {
   return (
@@ -19,5 +19,14 @@ function Article(props) {
 //   url: PropTypes.string.isRequired,
 //   content: PropTypes.string.isRequired,
 // };
+Article.propTypes = {
+  author: PropTypes.string,
+  content: PropTypes.string,
+  description: PropTypes.string,
+  publishedAt: PropTypes.string,
+  title: PropTypes.string,
+  url: PropTypes.string,
+  urlToImage: PropTypes.string,
+};
 
 export default Article;
