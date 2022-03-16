@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Design System</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="m-20">
+    <div id="root"></div>
+
+    <script type="text/babel">
+      let root = document.getElementById("root");
+
+      let buttonSizes = {
+        LARGE: "large",
+        MEDIUM: "medium",
+        SMALL: "small",
+      };
+
+      let buttonTypes = {
+        PRIMARY: "primary",
+        SECONDARY: "secondary",
+        TERTIARY: "tertiary",
+      };
+
+      function Button(props) {
+        function getStyles() {
+          return `button button-${
+            props.type ? props.type : buttonTypes.PRIMARY
+          } button-${props.size ? props.size : buttonSizes.MEDIUM}`;
+        }
+        return (
+          <button
+            onClick={props.onClickHandler}
+            className={getStyles() + " block"}
+            disabled={props.disabled}
+          >
+            {props.label || "Button"}
+          </button>
+        );
+      }
+
+      function App() {
+        return (
+          <div className="flex flex-col items-center h-60">
+            <Button label="Click Me" />
+            <Button
+              label="Click Me"
+              type={buttonTypes.PRIMARY}
+              size={buttonSizes.SMALL}
+            />
+            <Button
+              label="Click Me"
+              type={buttonTypes.SECONDARY}
+              size={buttonSizes.LARGE}
+            />
+            <Button
+              label="Click Me"
+              type={buttonTypes.TERTIARY}
+              size={buttonSizes.MEDIUM}
+            />
+            <Button disabled />
+            <Button onClickHandler={() => alert("You clicked me")} />
+          </div>
+        );
+      }
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+.button-small {
+  width: 5rem;
+  background-color: rgb(5, 57, 73);
+  color: red;
+}
+
+.button-medium {
+  width: 10rem;
+  background-color: rgb(33, 33, 122);
+  color: white;
+}
+
+.button-large {
+  width: 15rem;
+  background-color: rgba(8, 73, 8, 0.568);
+  color: white;
+}
+
+.button-primary {
+  border: 2px solid red;
+}
+
+.button-secondary {
+  border: 2px dashed rgba(41, 41, 104, 0.712);
+}
+
+.button-tertiary {
+  border: 2px dotted rgba(22, 18, 241, 0.658);
+}
+
+.button {
+  padding: 1.25rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+.disabled {
+  background-color: yellow;
+  filter: blur(20px);
+}
