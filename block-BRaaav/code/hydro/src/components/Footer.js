@@ -74,7 +74,7 @@ function Footer() {
                   </a>
                 </li>
                 <li className="social-media-item">
-                  <a href="#h">
+                  <a href="#e">
                     <i className="fab fa-instagram"></i>
                   </a>
                 </li>
